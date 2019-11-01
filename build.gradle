@@ -14,10 +14,12 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	
+	//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.2.0.RELEASE'
 	
 	compile group: 'com.h2database', name: 'h2', version: '1.4.200'
+	
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.0.RELEASE'
 	
 	
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
