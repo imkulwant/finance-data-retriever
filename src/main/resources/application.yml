@@ -6,3 +6,8 @@ spring:
     user:
       name: admin
       password: admin  
+      
+  datasource:
+    url: 
+    username: 
+    password: 

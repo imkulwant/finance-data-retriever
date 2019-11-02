@@ -28,10 +28,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		 * auth.inMemoryAuthentication().withUser("admin").password("admin").roles(
 		 * "ADMIN") .and().withUser("user").password("user").roles("USER");
 		 */
-
-		auth.jdbcAuthentication().dataSource(dataSource).withDefaultSchema()
-				.withUser(User.builder().username("user").password("user").roles("USER").build())
-				.withUser(User.builder().username("admin").password("admin").roles("ADMIN").build());
+		
+		/*
+		 * 
+		 * auth.jdbcAuthentication().dataSource(dataSource).withDefaultSchema()
+		 * .withUser(User.builder().username("user").password("user").roles("USER").
+		 * build())
+		 * .withUser(User.builder().username("admin").password("admin").roles("ADMIN").
+		 * build());
+		 */
+		
+		auth.jdbcAuthentication().dataSource(dataSource)
+				.usersByUsernameQuery("select username,password,enabled from users where username = ?")
+				.authoritiesByUsernameQuery("select username,authority from authorities where username = ?");
+			
 	}
 
 	@Override
