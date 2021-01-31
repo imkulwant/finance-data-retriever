@@ -4,15 +4,14 @@ import com.sds.model.IntraDayRequest;
 import com.sds.model.IntraDayResponse;
 import com.sds.service.AlphaVantageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
+import java.lang.annotation.Native;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("stocks")
+@RequestMapping("stocks/quote")
 public class StockTimeSeriesResource {
 
     private final AlphaVantageService alphaVantageService;
@@ -22,9 +21,10 @@ public class StockTimeSeriesResource {
         this.alphaVantageService = alphaVantageService;
     }
 
-    @PostMapping(value = "intra-day", consumes = "application/json")
-    public IntraDayResponse getIntraDayResponse(@RequestBody IntraDayRequest request) {
-        Optional<IntraDayResponse> response = alphaVantageService.intraDay(request);
+    @GetMapping(value = "intra-day", produces = "application/json")
+    public IntraDayResponse getIntraDayResponse(@RequestParam @NotNull String symbol, @RequestParam(defaultValue = "5min") String timeInterval) {
+
+        Optional<IntraDayResponse> response = alphaVantageService.intraDay(IntraDayRequest.builder().symbol(symbol).timeInterval(timeInterval).build());
 
         if (response.isPresent()) {
             return response.get();

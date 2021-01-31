@@ -1,5 +1,8 @@
 # Getting Started
 
+# APIs
+* http://localhost:8080/stocks/quote/intra-day?symbol=IBM
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
