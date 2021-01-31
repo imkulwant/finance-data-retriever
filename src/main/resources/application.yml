@@ -1,0 +1,5 @@
+alphavantage:
+   apiKey: "01DV42AOX8N0BDFJ"
+   function:
+     intraDay: "TIME_SERIES_INTRADAY"
+     dailyAdjusted: "TIME_SERIES_DAILY_ADJUSTED"

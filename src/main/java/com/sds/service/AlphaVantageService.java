@@ -1,12 +1,13 @@
 package com.sds.service;
 
+import com.sds.model.DailyAdjustedRequest;
 import com.sds.model.IntraDayRequest;
-import com.sds.model.IntraDayResponse;
-
-import java.util.Optional;
+import com.sds.model.AlphaVantageResponse;
 
 public interface AlphaVantageService {
 
-    Optional<IntraDayResponse> intraDay(IntraDayRequest intraDayRequest);
+    AlphaVantageResponse intraDay(IntraDayRequest intraDayRequest);
+
+    AlphaVantageResponse dailyAdjusted(DailyAdjustedRequest dailyAdjustedRequest);
 
 }
