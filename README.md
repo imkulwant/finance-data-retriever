@@ -2,6 +2,7 @@
 
 # APIs
 * http://localhost:8080/stocks/quote/intra-day?symbol=IBM
+* http://localhost:8080/stocks/quote/daily-adjusted?symbol=IBM
 
 ### Reference Documentation
 For further reference, please consider the following sections:
