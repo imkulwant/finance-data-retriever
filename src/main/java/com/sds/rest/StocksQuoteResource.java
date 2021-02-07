@@ -1,6 +1,7 @@
 package com.sds.rest;
 
 import com.sds.model.DailyAdjustedRequest;
+import com.sds.model.GlobalQuoteRequest;
 import com.sds.model.IntraDayRequest;
 import com.sds.model.AlphaVantageResponse;
 import com.sds.service.AlphaVantageService;
@@ -31,6 +32,13 @@ public class StocksQuoteResource {
     public AlphaVantageResponse getDailyAdjustedResponse(@RequestParam @NotNull String symbol) {
 
         return alphaVantageService.dailyAdjusted(DailyAdjustedRequest.builder().symbol(symbol).build());
+
+    }
+
+    @GetMapping(value = "global-quote", produces = "application/json")
+    public AlphaVantageResponse getGlobalQuoteResponse(@RequestParam @NotNull String symbol) {
+
+        return alphaVantageService.globalQuote(GlobalQuoteRequest.builder().symbol(symbol).build());
 
     }
 

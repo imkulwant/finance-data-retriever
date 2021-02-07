@@ -19,5 +19,7 @@ public class AlphaVantageResponse {
     private Map<String, IntraDayData> timeSeries;
     @JsonProperty("Time Series (Daily)")
     private Map<String, IntraDayData> dailySeries;
+    @JsonProperty("Global Quote")
+    private GlobalQuoteData globalQuote;
 
 }

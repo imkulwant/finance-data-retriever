@@ -1,6 +1,7 @@
 package com.sds.service;
 
 import com.sds.model.DailyAdjustedRequest;
+import com.sds.model.GlobalQuoteRequest;
 import com.sds.model.IntraDayRequest;
 import com.sds.model.AlphaVantageResponse;
 import org.slf4j.Logger;
@@ -17,6 +18,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     private final RestTemplate restTemplate;
     private final String DAILY_ADJUSTED_BASE_URL = "https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=%s&outputsize=%s";
     private final String INTRA_DAY_BASE_URL = "https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=%s&interval=%s&outputsize=%s";
+    private final String GLOBAL_QUOTE_BASE_URL = "https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=%s";
 
     private static final Logger LOG = LoggerFactory.getLogger(AlphaVantageServiceImpl.class);
 
@@ -28,6 +30,9 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
 
     @Value("${alphavantage.function.dailyAdjusted}")
     private String dailyAdjustedFunction;
+
+    @Value("${alphavantage.function.globalQuote}")
+    private String globalQuoteFunction;
 
     @Autowired
     public AlphaVantageServiceImpl(RestTemplate restTemplate) {
@@ -48,6 +53,15 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
 
         String apiUrl = String.format(DAILY_ADJUSTED_BASE_URL, dailyAdjustedFunction, dailyAdjustedRequest.getSymbol(),
                 apiKey, dailyAdjustedRequest.getOutputSize());
+
+        return getAlphaVantageResponse(apiUrl);
+
+    }
+
+    @Override
+    public AlphaVantageResponse globalQuote(GlobalQuoteRequest globalQuoteRequest) {
+
+        String apiUrl = String.format(GLOBAL_QUOTE_BASE_URL, globalQuoteFunction, globalQuoteRequest.getSymbol(), apiKey);
 
         return getAlphaVantageResponse(apiUrl);
 

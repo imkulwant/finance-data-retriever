@@ -3,3 +3,4 @@ alphavantage:
    function:
      intraDay: "TIME_SERIES_INTRADAY"
      dailyAdjusted: "TIME_SERIES_DAILY_ADJUSTED"
+     globalQuote: "GLOBAL_QUOTE"
