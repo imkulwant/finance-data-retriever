@@ -3,6 +3,8 @@
 # APIs
 * http://localhost:8080/stocks/quote/intra-day?symbol=IBM
 * http://localhost:8080/stocks/quote/daily-adjusted?symbol=IBM
+* http://localhost:8080/stocks/quote/global-quote?symbol=IBM
+* http://localhost:8080/crypto/listings
 
 ### Reference Documentation
 For further reference, please consider the following sections:

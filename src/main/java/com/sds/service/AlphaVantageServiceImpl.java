@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -40,6 +41,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     }
 
     @Override
+    @Cacheable(value = "com.sds.service.intraDay")
     public AlphaVantageResponse intraDay(IntraDayRequest request) {
 
         String apiUrl = String.format(INTRA_DAY_BASE_URL, intraDayFunction, request.getSymbol(),
@@ -49,6 +51,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     }
 
     @Override
+    @Cacheable(value = "com.sds.service.dailyAdjusted")
     public AlphaVantageResponse dailyAdjusted(DailyAdjustedRequest dailyAdjustedRequest) {
 
         String apiUrl = String.format(DAILY_ADJUSTED_BASE_URL, dailyAdjustedFunction, dailyAdjustedRequest.getSymbol(),
@@ -59,6 +62,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     }
 
     @Override
+    @Cacheable(value = "com.sds.service.globalQuote")
     public AlphaVantageResponse globalQuote(GlobalQuoteRequest globalQuoteRequest) {
 
         String apiUrl = String.format(GLOBAL_QUOTE_BASE_URL, globalQuoteFunction, globalQuoteRequest.getSymbol(), apiKey);
