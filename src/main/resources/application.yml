@@ -4,3 +4,9 @@ alphavantage:
      intraDay: "TIME_SERIES_INTRADAY"
      dailyAdjusted: "TIME_SERIES_DAILY_ADJUSTED"
      globalQuote: "GLOBAL_QUOTE"
+
+coinMarketCap:
+  apiKey: "94d41db2-5f76-4e11-b3e7-b07e028a5cb6"
+  url: "https://pro-api.coinmarketcap.com/"
+  function:
+    listings: "v1/cryptocurrency/listings/latest"

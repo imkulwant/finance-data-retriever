@@ -1,9 +1,9 @@
 package com.sds.service;
 
-import com.sds.model.DailyAdjustedRequest;
-import com.sds.model.GlobalQuoteRequest;
-import com.sds.model.IntraDayRequest;
-import com.sds.model.AlphaVantageResponse;
+import com.sds.model.stocks.DailyAdjustedRequest;
+import com.sds.model.stocks.GlobalQuoteRequest;
+import com.sds.model.stocks.IntraDayRequest;
+import com.sds.model.stocks.AlphaVantageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
