@@ -1,10 +1,10 @@
-package com.sds.rest;
+package com.fdr.rest;
 
-import com.sds.model.stocks.DailyAdjustedRequest;
-import com.sds.model.stocks.GlobalQuoteRequest;
-import com.sds.model.stocks.IntraDayRequest;
-import com.sds.model.stocks.AlphaVantageResponse;
-import com.sds.service.AlphaVantageService;
+import com.fdr.model.stocks.DailyAdjustedRequest;
+import com.fdr.model.stocks.GlobalQuoteRequest;
+import com.fdr.model.stocks.IntraDayRequest;
+import com.fdr.model.stocks.AlphaVantageResponse;
+import com.fdr.service.AlphaVantageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

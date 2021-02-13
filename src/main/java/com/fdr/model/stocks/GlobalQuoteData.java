@@ -1,4 +1,4 @@
-package com.sds.model.stocks;
+package com.fdr.model.stocks;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,6 +1,6 @@
-package com.sds.service;
+package com.fdr.service;
 
-import com.sds.model.crypto.CryptoListings;
+import com.fdr.model.crypto.CryptoListings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class CoinMarketCapServiceImpl implements CoinMarketCapService {
     }
 
     @Override
-    @Cacheable(value = "com.sds.service.getCryptoListings")
+    @Cacheable(value = "com.fdr.service.getCryptoListings")
     public CryptoListings getCryptoListings() {
         try {
 

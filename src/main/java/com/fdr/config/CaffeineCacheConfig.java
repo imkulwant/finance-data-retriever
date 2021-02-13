@@ -1,4 +1,4 @@
-package com.sds.config;
+package com.fdr.config;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import org.springframework.cache.CacheManager;

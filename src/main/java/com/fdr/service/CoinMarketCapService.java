@@ -1,6 +1,6 @@
-package com.sds.service;
+package com.fdr.service;
 
-import com.sds.model.crypto.CryptoListings;
+import com.fdr.model.crypto.CryptoListings;
 
 public interface CoinMarketCapService {
 

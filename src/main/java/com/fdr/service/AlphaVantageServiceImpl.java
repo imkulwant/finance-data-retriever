@@ -1,9 +1,9 @@
-package com.sds.service;
+package com.fdr.service;
 
-import com.sds.model.stocks.DailyAdjustedRequest;
-import com.sds.model.stocks.GlobalQuoteRequest;
-import com.sds.model.stocks.IntraDayRequest;
-import com.sds.model.stocks.AlphaVantageResponse;
+import com.fdr.model.stocks.DailyAdjustedRequest;
+import com.fdr.model.stocks.GlobalQuoteRequest;
+import com.fdr.model.stocks.IntraDayRequest;
+import com.fdr.model.stocks.AlphaVantageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +41,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     }
 
     @Override
-    @Cacheable(value = "com.sds.service.intraDay")
+    @Cacheable(value = "com.fdr.service.intraDay")
     public AlphaVantageResponse intraDay(IntraDayRequest request) {
 
         String apiUrl = String.format(INTRA_DAY_BASE_URL, intraDayFunction, request.getSymbol(),
@@ -51,7 +51,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     }
 
     @Override
-    @Cacheable(value = "com.sds.service.dailyAdjusted")
+    @Cacheable(value = "com.fdr.service.dailyAdjusted")
     public AlphaVantageResponse dailyAdjusted(DailyAdjustedRequest dailyAdjustedRequest) {
 
         String apiUrl = String.format(DAILY_ADJUSTED_BASE_URL, dailyAdjustedFunction, dailyAdjustedRequest.getSymbol(),
@@ -62,7 +62,7 @@ public class AlphaVantageServiceImpl implements AlphaVantageService {
     }
 
     @Override
-    @Cacheable(value = "com.sds.service.globalQuote")
+    @Cacheable(value = "com.fdr.service.globalQuote")
     public AlphaVantageResponse globalQuote(GlobalQuoteRequest globalQuoteRequest) {
 
         String apiUrl = String.format(GLOBAL_QUOTE_BASE_URL, globalQuoteFunction, globalQuoteRequest.getSymbol(), apiKey);

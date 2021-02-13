@@ -1,9 +1,9 @@
-package com.sds.service;
+package com.fdr.service;
 
-import com.sds.model.stocks.DailyAdjustedRequest;
-import com.sds.model.stocks.GlobalQuoteRequest;
-import com.sds.model.stocks.IntraDayRequest;
-import com.sds.model.stocks.AlphaVantageResponse;
+import com.fdr.model.stocks.DailyAdjustedRequest;
+import com.fdr.model.stocks.GlobalQuoteRequest;
+import com.fdr.model.stocks.IntraDayRequest;
+import com.fdr.model.stocks.AlphaVantageResponse;
 
 public interface AlphaVantageService {
 

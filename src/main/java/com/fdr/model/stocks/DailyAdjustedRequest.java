@@ -1,4 +1,4 @@
-package com.sds.model.stocks;
+package com.fdr.model.stocks;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -9,9 +9,11 @@ import javax.validation.constraints.NotNull;
 @Data
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GlobalQuoteRequest {
+public class DailyAdjustedRequest {
 
     @NotNull
     private String symbol;
+    private String datatype;
+    private String outputSize;
 
 }

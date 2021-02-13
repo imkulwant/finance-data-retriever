@@ -1,4 +1,4 @@
-package com.sds.config;
+package com.fdr.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

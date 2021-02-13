@@ -1,6 +1,6 @@
-package com.sds;
+package com.fdr;
 
-import com.sds.config.SDSConfig;
+import com.fdr.config.SDSConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
